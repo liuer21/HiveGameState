@@ -5,7 +5,7 @@
  *@author Samuel Nguyen
  *@author Stephen Nguyen
  *
- *@version 10/10/19
+ *@version 10/22/19
  */
 
 package com.example.hivegamestate;
@@ -90,22 +90,86 @@ public class HiveGameState {
     }
 
     //Returns a formatted string that describes the game's state
+    //Please change this if there is a way to make this shorter -Marc
     @Override
     public String toString() {
+        int i;
 
+        //Create strings to be contain
+        String strWBee = "";
+        String strWSpider = "";
+        String strWAnt= "";
+        String strWBeetle = "";
+        String strWGHopper = "";
+        String strBBee = "";
+        String strBSpider = "";
+        String strBAnt= "";
+        String strBBeetle = "";
+        String strBGHopper = "";
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.WBEE)
+            strWBee += piece.WBEE.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.WSPIDER)
+            strWSpider += piece.WSPIDER.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.WANT)
+            strWAnt += piece.WANT.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.WBEETLE)
+            strWBeetle += piece.WBEETLE.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.WGHOPPER)
+            strWGHopper += piece.WGHOPPER.name() + " "; }
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.BBEE)
+            strBBee += piece.BBEE.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.BSPIDER)
+            strBSpider += piece.BSPIDER.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++) {
+            if (bugList.get(i) == piece.BANT)
+            strBAnt += piece.BANT.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++) {
+            if (bugList.get(i) == piece.BBEETLE)
+            strBBeetle += piece.BBEETLE.name() + " ";}
+
+        for(i = 0; i < bugList.size(); i++)
+        {
+            if(bugList.get(i) == piece.BGHOPPER)
+            strBGHopper += piece.BGHOPPER.name() + " ";}
+
+        //prints number of turns and bug-piece enums each time they appear in bugList array
         return "Turn: " + turn + "\n" +
                 "BLACK_TURN: " + BLACK_TURN + "\n" +
                 "WHITE_TURN: " + WHITE_TURN + "\n" +
-                "White Bee: " + piece.WBEE.name() + 1 + "\n" +
-                "White Spider: " + piece.WSPIDER.name() + 3 + "\n" +
-                "White Ant: " + piece.WANT.name() + 3 + "\n" +
-                "White Beetle: " + piece.WBEETLE.name() + 2 + "\n" +
-                "White Grasshopper: " + piece.WGHOPPER.name() + 3 + "\n" +
-                "Black Bee: " + piece.BBEE.name() + 1 +"\n" +
-                "Black Spider: " + piece.BSPIDER.name() + 3 + "\n" +
-                "Black Ant: " + piece.BANT.name() + 3 +"\n" +
-                "Black Beetle: " + piece.BBEETLE.name() + 2 + "\n" +
-                "Black Grasshopper: " + piece.BGHOPPER.name() + 1 + "\n";
+                "White Bee: " + strWBee + "\n" +
+                "White Spider: " + strWSpider + "\n" +
+                "White Ant: " + strWAnt + "\n" +
+                "White Beetle: " + strWBeetle + "\n" +
+                "White Grasshopper: " + strWGHopper +"\n" +
+                "Black Bee: " + strBBee + "\n" +
+                "Black Spider: " + strBSpider + "\n" +
+                "Black Ant: " + strBAnt +"\n" +
+                "Black Beetle: " + strBBeetle + "\n" +
+                "Black Grasshopper: " + strBGHopper + "\n";
+                //We also have to include the board in this
     }
 
     // Following methods started by Samuel Nguyen
